@@ -1,18 +1,16 @@
 import './CatComponent.css';
 
-function Cat() {
+function Cat(props) {
 
-    const catName = "Leo";
     const randomNum = Math.random();
-    const date = Date(2023, 10, 11);
 
 
     return (
         <div className="cat-item">
             <div className="cat-item__description">
-                <div>{date}</div>
-                <div className="cat-item__title">{catName}</div>
-                <h2>leo to najslodszy kotek na swiecie  {randomNum}</h2>
+                <div>{props.date}</div>
+                <div className="cat-item__title">{props.catName}</div>
+                <h2>lorem ipsum  hd icnd hudhs huh sin ament gin dan banana  {randomNum}</h2>
             </div>
         </div>
     );

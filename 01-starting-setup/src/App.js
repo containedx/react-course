@@ -4,9 +4,9 @@ function App() {
   return (
     <div>
       <h2>Let's get started!</h2>
-      <Cat></Cat>
-      <Cat></Cat>
-      <Cat></Cat>
+      <Cat catName="Leo"></Cat>
+      <Cat catName="Leon"></Cat>
+      <Cat catName="Puszek"></Cat>
     </div>
   );
 }
