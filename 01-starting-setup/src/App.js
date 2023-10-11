@@ -1,4 +1,4 @@
-import Cat from './components/CatComponent';
+import Cat from "./components/CatComponent";
 
 function App() {
   return (
