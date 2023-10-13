@@ -1,4 +1,6 @@
 import Cat from './CatComponent';
+
+
 function DisplayCats({ cats }) {
 
     let catList = [];
