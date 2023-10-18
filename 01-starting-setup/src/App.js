@@ -1,4 +1,5 @@
 import DisplayCats from "./components/DisplayCatsComponent";
+import NewCat from "./components/CatForm/NewCat";
 
 const cats = [
   {
@@ -21,6 +22,8 @@ const cats = [
 function App() {
   return (
     <div>
+      <NewCat />
+
       <DisplayCats cats={cats} />
     </div>
   );

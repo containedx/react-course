@@ -1,0 +1,38 @@
+.new-cat {
+    background-color: #a892ee;
+    padding: 1rem;
+    margin: 2rem auto;
+    width: 50rem;
+    max-width: 95%;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+}
+
+.new-cat button {
+    font: inherit;
+    cursor: pointer;
+    padding: 1rem 2rem;
+    border: 1px solid #40005d;
+    background-color: #40005d;
+    color: white;
+    border-radius: 12px;
+    margin-right: 1rem;
+}
+
+.new-cat button:hover,
+.new-cat button:active {
+    background-color: #510674;
+    border-color: #510674;
+}
+
+.new-cat button.alternative {
+    color: #220131;
+    border-color: transparent;
+    background-color: transparent;
+}
+
+.new-cat button.alternative:hover,
+.new-cat button.alternative:active {
+    background-color: #ddb3f8;
+}
