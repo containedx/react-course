@@ -6,8 +6,9 @@ function genRandomInt(max) {
 }
 
 function Header() {
+  const description = reactDescriptions[genRandomInt(2)];
+
   return (
-    const description = reactDescriptions[genRandomInt(2)];
     <header>
       <img src="src/assets/react-core-concepts.png" alt="Stylized atom" />
       <h1>React Essentials</h1>
