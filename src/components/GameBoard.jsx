@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Log from '../components/Log.jsx';
 
 const initialGameBoard = [
     [null, null, null],
@@ -9,6 +10,7 @@ const initialGameBoard = [
 export default function GameBoard({onSelectSquare, activePlayerSymbol}) {
 
     const [gameBoard, setGameBoard] = useState(initialGameBoard);
+    const [gameTurns, setGameTurns] = useState([]);
 
     function handleSelectSquare(row, col){
         setGameBoard((prevGameBoard) => {
@@ -17,10 +19,17 @@ export default function GameBoard({onSelectSquare, activePlayerSymbol}) {
             return updatedBoard;
         });
 
+        setGameTurns(prevTurns => {
+            const updatedTurns = [{square: { r: row, c: col}, player: activePlayerSymbol}, ...prevTurns];
+            return updatedTurns;
+        })
+
         onSelectSquare();
+        CheckWin();
     }
 
     return(
+        <>
         <ol id="game-board">
             {gameBoard.map((row, rowIndex) => <li key={rowIndex}>
                 <ol>
@@ -28,7 +37,17 @@ export default function GameBoard({onSelectSquare, activePlayerSymbol}) {
                         <button onClick={() => handleSelectSquare(rowIndex, colIndex)}>{playerSymbol}</button>
                         </li>)}
                 </ol>
-            </li>)}
+            </li>
+            )}
         </ol>
+
+        <Log turns={gameTurns}/>
+
+        </>
     );
+
+
+    function CheckWin(){
+
+    }
 }
