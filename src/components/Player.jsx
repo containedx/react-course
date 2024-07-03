@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
-export default function Player({pName, symbol, isActive}){
+export default function Player({name, symbol, isActive}){
     
-    const[ playerName, setPlayerName ] = useState(pName);
+    const[ playerName, setPlayerName ] = useState(name);
     const[ isEditing, setIsEditing ] = useState(false);
 
     function onClick(){

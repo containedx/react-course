@@ -11,6 +11,7 @@ export default function GameBoard({onSelectSquare, activePlayerSymbol}) {
 
     const [gameBoard, setGameBoard] = useState(initialGameBoard);
     const [gameTurns, setGameTurns] = useState([]);
+    const [winText, setWinText] = useState("");
 
     function handleSelectSquare(row, col){
         setGameBoard((prevGameBoard) => {
@@ -43,7 +44,8 @@ export default function GameBoard({onSelectSquare, activePlayerSymbol}) {
             </li>
             )}
         </ol>
-
+        
+        <h1>{winText}</h1>
         <Log turns={gameTurns}/>
 
         </>
@@ -54,7 +56,7 @@ export default function GameBoard({onSelectSquare, activePlayerSymbol}) {
         // Check rows
         for (let row = 0; row < 3; row++) {
             if (board[row][0] === activePlayerSymbol && board[row][1] === activePlayerSymbol && board[row][2] === activePlayerSymbol) {
-                alert(`${activePlayerSymbol} wins!`);
+                setWinText(`${activePlayerSymbol} wins!`);
                 return;
             }
         }
@@ -62,18 +64,18 @@ export default function GameBoard({onSelectSquare, activePlayerSymbol}) {
         // Check columns
         for (let col = 0; col < 3; col++) {
             if (board[0][col] === activePlayerSymbol && board[1][col] === activePlayerSymbol && board[2][col] === activePlayerSymbol) {
-                alert(`${activePlayerSymbol} wins!`);
+                setWinText(`${activePlayerSymbol} wins!`);
                 return;
             }
         }
 
         // Check diagonals
         if (board[0][0] === activePlayerSymbol && board[1][1] === activePlayerSymbol && board[2][2] === activePlayerSymbol) {
-            alert(`${activePlayerSymbol} wins!`);
+            setWinText(`${activePlayerSymbol} wins!`);
             return;
         }
         if (board[0][2] === activePlayerSymbol && board[1][1] === activePlayerSymbol && board[2][0] === activePlayerSymbol) {
-            alert(`${activePlayerSymbol} wins!`);
+            setWinText(`${activePlayerSymbol} wins!`);
             return;
         }
     }
