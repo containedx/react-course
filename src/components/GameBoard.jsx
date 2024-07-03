@@ -38,13 +38,13 @@ export default function GameBoard({onSelectSquare, activePlayerSymbol}) {
             {gameBoard.map((row, rowIndex) => <li key={rowIndex}>
                 <ol>
                     {row.map((playerSymbol, colIndex) => <li key={colIndex}>
-                        <button onClick={() => handleSelectSquare(rowIndex, colIndex)}>{playerSymbol}</button>
+                        <button onClick={() => handleSelectSquare(rowIndex, colIndex)} disabled={playerSymbol !== null} >{playerSymbol}</button>
                         </li>)}
                 </ol>
             </li>
             )}
         </ol>
-        
+
         <h1>{winText}</h1>
         <Log turns={gameTurns}/>
 
