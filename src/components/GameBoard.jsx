@@ -78,5 +78,9 @@ export default function GameBoard({onSelectSquare, activePlayerSymbol}) {
             setWinText(`${activePlayerSymbol} wins!`);
             return;
         }
+
+        if(gameTurns.length === 8 && winText === ""){
+            setWinText("draw!");
+        }
     }
 }
