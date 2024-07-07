@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import Log from '../components/Log.jsx';
+import Log from './Log.jsx';
+import GameOver from './GameOver.jsx'
 
 const initialGameBoard = [
     [null, null, null],
@@ -34,6 +35,7 @@ export default function GameBoard({onSelectSquare, activePlayerSymbol}) {
 
     return(
         <>
+        {winText !== "" && <GameOver winner={winText} />}
         <ol id="game-board">
             {gameBoard.map((row, rowIndex) => <li key={rowIndex}>
                 <ol>
@@ -44,8 +46,6 @@ export default function GameBoard({onSelectSquare, activePlayerSymbol}) {
             </li>
             )}
         </ol>
-
-        <h1>{winText}</h1>
         <Log turns={gameTurns}/>
 
         </>
